@@ -6,6 +6,7 @@ JSON.parse(JSON.stringify(source));
 
 function cloneDeepA (source, hash = new WeakMap()) {
   if (!isObject(source)) return source;
+  if (hash.has(source)) return hash.get(source);
 
   let target = Array.isArray(source) ? [] : {};
 
