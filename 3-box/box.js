@@ -45,19 +45,3 @@ function boxCal (boxNumber, arr) {
 }
 
 boxCal(14, [3, 1, 4, 2, 5, 5, 7, 5, 9, 8, 4, 3, 2, 5]);
-
-//Sample
-
-// var arr = ['Car', 'Car', 'Truck', 'Boat', 'Truck'];
-// var hist = {};
-
-// hist = arr.reduce((prev, item) => {
-//     if (item in prev) {
-//         prev[item]++
-//     } else {
-//         prev[item] = 1
-//     }
-//     return prev;
-// }, {});
-
-// console.log(hist);
