@@ -1,7 +1,7 @@
 // Solution 1
 
 function cloneShallow (source) {
-  let target = [];
+  let target = {};
 
   for (let key in source) {
     if (Object.prototype.hasOwnProperty.call(source, key)) {
