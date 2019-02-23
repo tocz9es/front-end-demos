@@ -62,3 +62,31 @@ function bubbleSort3 (arr) {
 }
 
 console.log(bubbleSort3(arr));
+
+// Solution 4: Combine with Solution 2 and 3
+
+function bubbleSort4 (arr) {
+  let start = 0;
+  let end = arr.length - 1;
+
+  while (start < end) {
+    let startPos = 0;
+    let endPos = 0;
+
+    for (let i = start; i < end; i++) {
+      if (arr[i] > arr[i + 1]) {
+        endPos = i;
+        swap(arr, i, i + 1);
+      }
+    }
+    end = endPos;
+    for (let i = end; i > start; i--) {
+      if (arr[i - 1] > arr[i]) {
+        startPos = i;
+        swap(arr, i - 1, i);
+      }
+    }
+    start = startPos;
+  }
+  return arr;
+}
