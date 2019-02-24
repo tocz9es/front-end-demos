@@ -9,6 +9,7 @@ function cloneDeepA (source, hash = new WeakMap()) {
   if (hash.has(source)) return hash.get(source);
 
   let target = Array.isArray(source) ? [] : {};
+  hash.set(source, target);
 
   for (let key in source) {
     if (Object.prototype.hasOwnProperty.call(source, key)) {
