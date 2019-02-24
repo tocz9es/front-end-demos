@@ -11,7 +11,7 @@ function cloneShallow (source) {
   return target;
 }
 
-// Solution 2
+// Solution 2: Object.assign()
 
 const objA = {
   name: 'Apple',

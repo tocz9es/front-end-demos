@@ -31,7 +31,7 @@ function isObject (obj) {
 
 function cloneDeepB (source, uniqueList) {
   if (!isObject(source)) return source;
-  if (!uniqueList) return uniqueList = [];
+  if (!uniqueList) uniqueList = [];
 
   let target = Array.isArray(source) ? [] : {};
 

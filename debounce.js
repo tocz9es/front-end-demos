@@ -38,7 +38,7 @@ function debounce (func, wait = 50, immediate) {
       func.apply(context, args);
       context = args = null;
     }
-  }, wait)
+  }, wait);
 
   return (...params) => {
     if (!timer) {
@@ -55,3 +55,9 @@ function debounce (func, wait = 50, immediate) {
     }
   }
 }
+
+function func () {
+  console.log(new Date());
+}
+
+window.addEventListener('mousemove', debounce(func, 50, true));
