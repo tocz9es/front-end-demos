@@ -39,7 +39,6 @@ function bubbleSort2 (arr) {
 console.log(bubbleSort2(arr));
 
 // Solution 3: Two-ways traversal
-
 function bubbleSort3 (arr) {
   let start = 0;
   let end = arr.length - 1;
@@ -64,7 +63,6 @@ function bubbleSort3 (arr) {
 console.log(bubbleSort3(arr));
 
 // Solution 4: Combine with Solution 2 and 3
-
 function bubbleSort4 (arr) {
   let start = 0;
   let end = arr.length - 1;

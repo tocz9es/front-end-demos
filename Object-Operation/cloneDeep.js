@@ -1,9 +1,7 @@
 // Solution 1: Normal CloneDeep
-// Ignore undefined, 
 JSON.parse(JSON.stringify(source));
 
 // Solution 2: Using ES6 WeakMap()
-
 function cloneDeepA (source, hash = new WeakMap()) {
   if (!isObject(source)) return source;
   if (hash.has(source)) return hash.get(source);
@@ -28,13 +26,11 @@ function isObject (obj) {
 }
 
 // Solution 3: Using Array
-
 function cloneDeepB (source, uniqueList) {
   if (!isObject(source)) return source;
   if (!uniqueList) uniqueList = [];
 
   let target = Array.isArray(source) ? [] : {};
-
   let uniqueData = find(uniqueList, source);
 
   // If data exist, return saved data

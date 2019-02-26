@@ -1,5 +1,4 @@
 // debounce Lite Version
-
 function debounceLite (func, wait) {
   let timeout = null;
   return () => {
@@ -15,7 +14,6 @@ function handle () {
 window.addEventListener('scroll', debounce(handle, 1000));
 
 // debounce Simple Version
-
 const debounce = (func, wait = 50) => {
   let timer = 0;
   return (...args) => {
@@ -27,7 +25,6 @@ const debounce = (func, wait = 50) => {
 }
 
 // debounce Full Version
-
 function debounce (func, wait = 50, immediate) {
   let timer, context, args;
 

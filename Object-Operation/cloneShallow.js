@@ -1,5 +1,4 @@
 // Solution 1
-
 function cloneShallow (source) {
   let target = {};
 
@@ -12,7 +11,6 @@ function cloneShallow (source) {
 }
 
 // Solution 2: Object.assign()
-
 const objA = {
   name: 'Apple',
   age: 3

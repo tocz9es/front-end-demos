@@ -35,7 +35,7 @@ const mergePromise = ajaxArray => {
 
 mergePromise([ajax1, ajax2, ajax3]).then(data => {
 	console.log('done');
-	console.log(data); // data 为 [1, 2, 3]
+	console.log(data); // data: [1, 2, 3]
 });
 
 // 1

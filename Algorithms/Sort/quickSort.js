@@ -21,7 +21,6 @@ function quickSort (arr) {
 console.log(quickSort(arr));
 
 // Solution 2: Functional Programming
-
 function quickSort2 (arr) {
   const pivot = arr.shift();
   const left = [];
