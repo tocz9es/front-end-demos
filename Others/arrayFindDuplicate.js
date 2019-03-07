@@ -3,7 +3,7 @@
 const arr1 = [11, 25, 44, [52, 44, 23], '52'];
 const arr2 = [16, 25, 17, [11, 25, [23, 18]]];
 
-// Find the Duplicate numbers.
+// Find the Duplicate items.
 
 function findDuplicate (arr1, arr2) {
   let map = new Map();
