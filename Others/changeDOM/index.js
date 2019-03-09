@@ -4,5 +4,5 @@ function changeDOM () {
   console.log(getLi);
   var cloneNode = getLi.cloneNode(true);
   getUl.removeChild(getLi);
-  document.getElementById('1').append(cloneNode);
+  document.getElementById('1').after(cloneNode);
 }
