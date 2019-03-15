@@ -3,6 +3,16 @@ let arr = [ [1, 2, 2], [3, 4, 5, 5], [6, 7, 8, 9, [11, 12, [12, 13, [14]]]], 10]
 
 // How to flatten the array, and sort by asc.
 
+// Just Flatten
+function flatten (arr) {
+	return arr.reduce((prev, item) => {
+		console.log(prev, item)
+		return prev.concat(Array.isArray(item) ? flatten(item) : item);
+	}, []);
+}
+
+flatten(arr);
+
 // Solution 1: Using ES6
 Array.from(new Set(arr.flat(4))).sort((a, b) => { return a - b; }); // [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
 
