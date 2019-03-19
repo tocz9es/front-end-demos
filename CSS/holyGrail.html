@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>holyGrail</title>
+  <style>
+    .clearfix {
+      zoom: 1;
+    }
+    .clearfix:after {
+      display: block;
+      content: '';
+      clear: both;
+      height: 0;
+      visibility: hidden;
+    }
+    header, footer {
+      margin: 0 auto;
+      height: 50px;
+      width: 1000px;
+      background-color: #0094ff;
+      text-align: center;
+    }
+    .content {
+      margin: 0 auto;
+      height: 800px;
+      width: 1000px;
+      background-color: #000000;
+      text-align: center;
+    }
+    .side {
+      float: left;
+      height: 800px;
+      width: 280px;
+      background-color: #ff006e;
+    }
+    .main {
+      float: right;
+      height: 800px;
+      width: 720px;
+      background-color: #fbcfcf;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    I'm the header.
+  </header>
+  <div class="content clearfix">
+    <div class="side">
+      Left-Side
+    </div>
+    <div class="main">
+      Main-Content
+    </div>
+  </div>
+  <footer>
+    I'm the footer.
+  </footer>
+</body>
+</html>
