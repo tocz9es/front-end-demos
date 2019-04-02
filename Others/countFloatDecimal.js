@@ -1,3 +1,6 @@
+// Input a number, count the decimal.
+// Example: 5.43e-7 -> 9, 10 -> 0, 0.111 -> 3.
+
 function countFloatDecimal(source) {
   let reg = source.toExponential().match(/\d(?:\.(\d*))?e([+-]\d+)/);
   if (Math.floor(source) === source) {

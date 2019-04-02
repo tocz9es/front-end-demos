@@ -1,3 +1,6 @@
+// Given a string contains a long date format.
+// Example: 201910061715 -> 2019年10月06日 17:15
+
 function dateStringFormat(source) {
   let year = source.substring(0, 4);
   let month = source.substring(4, 6);
