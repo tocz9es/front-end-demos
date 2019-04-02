@@ -21,6 +21,15 @@
       <li id="2">2</li>
       <li id="3">3</li>
     </ul> -->
-  <script src="./index.js"></script>
+  <script>
+    function changeDOM () {
+      let getUl = document.getElementsByTagName('ul')[0];
+      let getLi = getUl.lastElementChild;
+      console.log(getLi);
+      let cloneNode = getLi.cloneNode(true);
+      getUl.removeChild(getLi);
+      document.getElementById('1').after(cloneNode);
+    }
+  </script>
 </body>
 </html>

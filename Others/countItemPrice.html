@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>BuyBuyBuy</title>
+</head>
+<body>
+  <h1>Buy Buy Buy</h1>
+  <label for="limit">
+    预算上限
+    <input type="text" id="limit">
+  </label>
+  <label for="price">
+    物品价格(空格分隔)
+    <input type="text" id="itemPrice">
+  </label>
+  <button onclick="countItemTotal()">计算商品总价</button>
+  <br>
+  <p id="result"></p>
+  <script>
+    function countItemTotal() {
+      let reg = /^[1-9]d*.d*|0.d*[1-9]d*$/;
+      let limit = document.getElementById("limit").value;
+      let itemPrice = document.getElementById("itemPrice").value;
+      let result = document.getElementById("result");
+      if (reg.test(limit) && reg.test(itemPrice)) {
+        let items = itemPrice.split(" ");
+        let countTotal = 0;
+        for (let key in items) {
+          countTotal += parseFloat(items[key]);
+          result.innerText = countTotal;
+        }
+      } else {
+        alert('输入框内必须为数字！');
+      }
+    }
+  </script>
+</body>
+</html>

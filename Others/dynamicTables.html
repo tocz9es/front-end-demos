@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Dynamic grid</title>
+  <style>
+    td {
+      width: 20px;
+      height: 20px;
+      border: 1px solid;
+    }
+  </style>
+</head>
+<body>
+  <input type="text" id="number" placeholder="请输入行×列">
+  <button onclick="createGrids()">生成格子</button>
+  <script>
+    function createGrids() {
+      let n = document.getElementById("number").value;
+      let str = "<tbody>";
+      for (let i = 0; i < n; i++) {
+        str += "<tr>";
+        for (let j = 0; j < n; j++) {
+          str += "<td></td>";
+        }
+        str += "</tr>";
+      }
+      str += "</tbody>";
+      let table = document.createElement("table");
+      table.innerHTML = str;
+      table.setAttribute("cellspacing", 0);
+      document.body.appendChild(table);
+      colorEvent(table);
+    }
+
+    function colorEvent(table) {    
+      table.addEventListener("mouseover", colorHover, false);
+      table.addEventListener("mouseout", colorOut, false);
+      table.addEventListener("click", colorClick, false);
+
+      function colorHover(ev) {
+        var e = ev || window.event;
+        var target = e.target || e.srcElement;
+        if (target.tagName == "TD" && target.style.background != "blue") {
+            target.style.background = "red";
+        }
+      }
+      function colorOut(ev) {
+        var e = ev || window.event;
+        var target = e.target || e.srcElement;
+        if (target.tagName == "TD" && target.style.background != "blue") {
+            target.style.background = "white";
+        }
+      }
+      function colorClick(ev) {
+        var e = ev || window.event;
+        var target = e.target || e.srcElement;
+        if (target.tagName == "TD") {
+            target.style.background = (target.style.background == "blue" ? "white" : "blue");
+        }
+      }
+  }
+  </script>
+</body>
+
+</html>

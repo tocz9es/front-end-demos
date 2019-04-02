@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Navbar Demo</title>
+  <style>
+    .clearfix {
+      zoom: 1;
+    }
+    .clearfix:after {
+      display: block;
+      content: '';
+      clear: both;
+      height: 0;
+      visibility: hidden;
+    }
+    .menu {
+      background-color: #0094ff;
+      width: 700px;
+    }
+    .menu li {
+      float: left;
+      list-style-type: none;
+      text-align: center;
+      border: 2px solid #000;
+      padding: 5px 10px;
+      font-size: 12px;
+      /* margin: 10px; */
+    }
+    .in-bl, ul {
+      font-size: 0;
+    }
+    .in-bl li {
+      display: inline-block;
+      list-style-type: none;
+      border: 2px solid #000;
+      padding: 5px 10px;
+      font-size: 12px;
+      /* margin: 10px; */
+    }
+  </style>
+</head>
+<body>
+  <ul class="menu clearfix">
+    <li>Home</li>
+    <li>Products</li>
+    <li>News</li>
+    <li>Contact</li>
+    <li>About</li>
+  </ul>
+  <p>This is a float:left nav-bar. </p>
+  <ul class="in-bl">
+    <li>Home</li>
+    <li>Products</li>
+    <li>News</li>
+    <li>Contact</li>
+    <li>About</li>
+  </ul>
+  <p>This is a inline-block nav-bar.</p>
+</body>
+</html>

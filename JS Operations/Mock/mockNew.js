@@ -11,3 +11,15 @@ function _new (func) {
     return obj;
   }
 }
+
+function _new (func) {
+  let res = {};
+  if (func.prototype !== null) {
+    res.__proto__ = func.prototype;
+  }
+  let ret = func.apply(res, Array.prototype.slice.call(arguments, 1));
+  if ((typeof ret === 'object' || typeof ret === 'function') && ret !== null) {
+    return ret;
+  }
+  return res;
+}
