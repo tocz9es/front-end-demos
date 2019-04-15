@@ -1,5 +1,5 @@
 Function.prototype.call2 = function (content = window) {
-    content.fn = this; // Point this to 
+    content.fn = this;
     let args = [...arguments].slice(1);
     let result = content.fn(...args);
     delete content.fn;
