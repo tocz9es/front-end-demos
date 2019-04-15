@@ -1,6 +1,4 @@
-function Person () {
-
-}
+function Person () {}
 
 Person.prototype.name = 'Ada';
 

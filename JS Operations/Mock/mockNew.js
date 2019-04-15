@@ -6,7 +6,7 @@ function _new (fn, ...args) {
 
 function _new (func) {
   return function () {
-    const obj = {__proto__: func.prototype}
+    const obj = { __proto__: func.prototype }
     func.apply(obj, arguments);
     return obj;
   }
