@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/vue/2.1.3/vue.js"></script>
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <p>{{ message }}</p>
+  </div>
+
+  <script>
+    var app = new Vue({
+      el: '#app',
+      data: {
+        message: 'Hello World'
+      },
+      beforeCreate: function () {
+        console.group('beforeCreate: 此时el和data都未加载');
+        console.log("%c%s", "color:red", "el     : " + this.$el);
+        console.log("%c%s", "color:red", "data   : " + this.$data);
+        console.log("%c%s", "color:red", "message: " + this.message)  
+      },
+      created: function () {
+        console.group('created: 此时加载了data而未加载el');
+        console.log("%c%s", "color:red", "el     : " + this.$el);
+        console.log("%c%s", "color:red", "data   : " + this.$data);
+        console.log("%c%s", "color:red", "message: " + this.message);
+      },
+      beforeMount: function () {
+        console.group('beforeMount: 此时加载了el与data，但未替换模板字符串的内容');
+        console.log("%c%s", "color:red", "el     : " + (this.$el));
+        console.log(this.$el);
+        console.log("%c%s", "color:red", "data   : " + this.$data);  
+        console.log("%c%s", "color:red", "message: " + this.message);  
+      },
+      mounted: function () {
+        console.group('mounted: 此时加载了el与data，模板字符串的内容也已被替换');
+        console.log("%c%s", "color:red", "el     : " + this.$el);
+        console.log(this.$el);    
+        console.log("%c%s", "color:red", "data   : " + this.$data);
+        console.log("%c%s", "color:red", "message: " + this.message);
+        console.log('Now you can try this code: app.$data.message=\'Hello Vue\'');
+      },
+      beforeUpdate: function () {
+        console.group('beforeUpdate');
+        console.log("%c%s", "color:red", "el     : " + this.$el);
+        console.log(this.$el);   
+        console.log("%c%s", "color:red", "data   : " + this.$data); 
+        console.log("%c%s", "color:red", "message: " + this.message); 
+      },
+      updated: function () {
+        console.group('updated');
+        console.log("%c%s", "color:red", "el     : " + this.$el);
+        console.log(this.$el); 
+        console.log("%c%s", "color:red", "data   : " + this.$data); 
+        console.log("%c%s", "color:red", "message: " + this.message); 
+        console.log('Now you can try this code: app.$destroy()');
+      },
+      beforeDestroy: function () {
+        console.group('beforeDestroy');
+        console.log("%c%s", "color:red", "el     : " + this.$el);
+        console.log(this.$el);    
+        console.log("%c%s", "color:red", "data   : " + this.$data); 
+        console.log("%c%s", "color:red", "message: " + this.message); 
+      },
+      destroyed: function () {
+        console.group('destroyed');
+        console.log("%c%s", "color:red", "el     : " + this.$el);
+        console.log(this.$el);  
+        console.log("%c%s", "color:red", "data   : " + this.$data); 
+        console.log("%c%s", "color:red", "message: " + this.message)
+      }
+    })
+  </script>
+</body>
+</html>

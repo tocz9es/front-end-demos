@@ -5,12 +5,12 @@
 // 3: LOADING
 // 4: DONE
 
-// Normal sending request
+// Initialize the normal sending request
 let xhr;
 // Create XMLHttpRequest Object
-if (window.XMLHttpRequest) {
+if (window.XMLHttpRequest) { // If the new browser
     xhr = new XMLHttpRequest();
-} else if (window.ActiveXObject) {
+} else if (window.ActiveXObject) { // If the old browser
     xhr = new ActiveXObject("Microsoft.XMLHTTP");
 }
 // Bind the callback of readyState change
